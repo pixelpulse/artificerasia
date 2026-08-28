@@ -12,7 +12,8 @@ type FieldImageProps = {
   priority?: boolean;
 };
 
-const extensions = ["png", "jpg", "webp"] as const;
+// WebP first (optimized copies of the repository PNGs); PNG/JPG are fallbacks.
+const extensions = ["webp", "png", "jpg"] as const;
 
 function resolveSrc(id: string): string | null {
   for (const ext of extensions) {
@@ -42,6 +43,7 @@ export function FieldImage({ id, figure, subject, alt, priority = false }: Field
           width={1672}
           height={941}
           loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           decoding="async"
           className="h-full w-full object-cover"
         />

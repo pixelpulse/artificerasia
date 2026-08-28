@@ -9,7 +9,16 @@ Image slots resolve by path, relative to this folder:
 - **page** — which tab the image belongs to
 - **section** — the page section (same names as the section headings)
 - **subsection** — optional, e.g. a button-driven image set
-- **ext** — `.png`, `.jpg`, or `.webp` (tried in that order)
+- **ext** — `.webp`, `.png`, or `.jpg` (tried in that order)
+
+## Encoding convention
+
+`.webp` is the primary format. Every image ships as a WebP copy (quality 90,
+or 95 for the noisiest photographs) of the original PNG, typically 6–9x
+smaller with no visible quality loss. The PNGs are kept alongside as
+fallbacks for non-WebP browsers and as the encode source; regenerate the
+WebP copies with sharp (e.g. `sharp(p).webp({ quality: 90 })`) when an
+original changes.
 
 ## Layout
 

@@ -99,13 +99,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   border: 2px solid var(--color-ink);
   background-color: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-tech);
-  font-size: 1.125rem;
+  font-size: 0.9rem;
   line-height: 1;
   cursor: pointer;
   box-shadow: 2px 2px 0 0 var(--color-ink);

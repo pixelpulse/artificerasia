@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ImageFrame } from "@/components/image-frame";
 
 const equipment = [
@@ -41,7 +41,8 @@ const equipment = [
   },
 ] as const;
 
-const extensions = ["png", "jpg", "webp"] as const;
+// WebP first (optimized copies of the repository PNGs); PNG/JPG are fallbacks.
+const extensions = ["webp", "png", "jpg"] as const;
 
 /** Image folder for Home section 01, relative to `images/`. */
 const base = "home/1_Access";
@@ -70,6 +71,18 @@ export function EquipmentBrowser({ basePath = "" }: EquipmentBrowserProps) {
     setSelectedSlug(slug);
     setFailIndex(0);
   }
+
+  // Warm the cache with every category image shortly after first paint so
+  // switching tags is instant instead of waiting on a fresh download.
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      for (const item of equipment) {
+        const img = new Image();
+        img.src = `${basePath}/images/${base}/${item.index}_${item.slug}.${extensions[0]}`;
+      }
+    }, 300);
+    return () => window.clearTimeout(timer);
+  }, [basePath]);
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-12">

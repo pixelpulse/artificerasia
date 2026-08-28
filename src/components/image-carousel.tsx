@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ImageFrame } from "@/components/image-frame";
 
-const extensions = ["png", "jpg", "webp"] as const;
+// WebP first (optimized copies of the repository PNGs); PNG/JPG are fallbacks.
+const extensions = ["webp", "png", "jpg"] as const;
 
 export type CarouselSlide = {
   /** Hierarchical image id without extension, e.g. "home/3_Deployment/0_main-exterior" */
@@ -39,6 +40,18 @@ export function ImageCarousel({ figure, slides, basePath = "" }: ImageCarouselPr
   const prev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
   const next = () => setIndex((i) => (i + 1) % slides.length);
 
+  // Preload the adjacent slides so prev/next clicks paint instantly.
+  useEffect(() => {
+    const neighbors = [
+      slides[(index - 1 + slides.length) % slides.length],
+      slides[(index + 1) % slides.length],
+    ];
+    for (const s of neighbors) {
+      const img = new Image();
+      img.src = `${basePath}/images/${s.id}.${extensions[0]}`;
+    }
+  }, [index, slides, basePath]);
+
   return (
     <ImageFrame
       label={`${figure} · ${slide.id}`}
@@ -66,7 +79,7 @@ export function ImageCarousel({ figure, slides, basePath = "" }: ImageCarouselPr
         </a>
       )}
 
-      <div className="pointer-events-none absolute inset-0 flex items-end justify-between px-2 pb-3">
+      <div className="pointer-events-none absolute inset-0 flex items-end justify-between px-5 pb-7">
         <button
           type="button"
           onClick={prev}
