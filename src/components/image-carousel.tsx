@@ -16,6 +16,8 @@ export type CarouselSlide = {
 type ImageCarouselProps = {
   figure: string;
   slides: CarouselSlide[];
+  /** GitHub Pages base path prefix ("" locally / custom domain) */
+  basePath?: string;
 };
 
 /**
@@ -23,7 +25,7 @@ type ImageCarouselProps = {
  * other image slot, with square prev/next buttons on the left and right
  * edges of the image box. Missing images fall back to linked placeholders.
  */
-export function ImageCarousel({ figure, slides }: ImageCarouselProps) {
+export function ImageCarousel({ figure, slides, basePath = "" }: ImageCarouselProps) {
   const [index, setIndex] = useState(0);
   const [fails, setFails] = useState<Record<string, number>>({});
 
@@ -32,7 +34,7 @@ export function ImageCarousel({ figure, slides }: ImageCarouselProps) {
   const src =
     fail >= extensions.length
       ? null
-      : `/images/${slide.id}.${extensions[Math.min(fail, extensions.length - 1)]}`;
+      : `${basePath}/images/${slide.id}.${extensions[Math.min(fail, extensions.length - 1)]}`;
 
   const prev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
   const next = () => setIndex((i) => (i + 1) % slides.length);

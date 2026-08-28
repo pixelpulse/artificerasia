@@ -7,6 +7,7 @@ import { FieldImage } from "@/components/field-image";
 import { Hero } from "@/components/hero";
 import { ImageCarousel } from "@/components/image-carousel";
 import { SectionHeading } from "@/components/section-heading";
+import { basePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Open Access Hardware",
@@ -70,7 +71,7 @@ export default function HomePage() {
           kicker="The access problem"
           title="Talent is everywhere. Hardware is not."
         />
-        <EquipmentBrowser />
+        <EquipmentBrowser basePath={basePath} />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
@@ -111,6 +112,7 @@ export default function HomePage() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
             <ImageCarousel
+              basePath={basePath}
               figure="Fig. 02"
               slides={[
                 {

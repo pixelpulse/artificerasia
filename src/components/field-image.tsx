@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ImageFrame } from "@/components/image-frame";
+import { basePath } from "@/lib/base-path";
 
 type FieldImageProps = {
   /** Hierarchical image path without extension, e.g. "home/0_Intro/hero" */
@@ -28,7 +29,8 @@ function resolveSrc(id: string): string | null {
  * visible linked placeholder (e.g. `[home/0_Intro/hero](#home/0_Intro/hero)`) when missing.
  */
 export function FieldImage({ id, figure, subject, alt, priority = false }: FieldImageProps) {
-  const src = resolveSrc(id);
+  const resolved = resolveSrc(id);
+  const src = resolved ? `${basePath}${resolved}` : null;
 
   return (
     <ImageFrame label={`${figure} · ${id}`} subject={subject}>

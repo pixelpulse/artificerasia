@@ -46,12 +46,17 @@ const extensions = ["png", "jpg", "webp"] as const;
 /** Image folder for Home section 01, relative to `images/`. */
 const base = "home/1_Access";
 
+type EquipmentBrowserProps = {
+  /** GitHub Pages base path prefix ("" locally / custom domain) */
+  basePath?: string;
+};
+
 /**
  * Interactive equipment index for Home section 01.
  * Tag buttons filter the framed image; when a gear image is missing from
  * images/home/1_Access/, a visible linked placeholder is shown instead.
  */
-export function EquipmentBrowser() {
+export function EquipmentBrowser({ basePath = "" }: EquipmentBrowserProps) {
   const [selectedSlug, setSelectedSlug] = useState<string>(equipment[0].slug);
   const [failIndex, setFailIndex] = useState(0);
 
@@ -59,7 +64,7 @@ export function EquipmentBrowser() {
   const showingPlaceholder = failIndex >= extensions.length;
   const src = showingPlaceholder
     ? null
-    : `/images/${base}/${selected.index}_${selected.slug}.${extensions[Math.min(failIndex, extensions.length - 1)]}`;
+    : `${basePath}/images/${base}/${selected.index}_${selected.slug}.${extensions[Math.min(failIndex, extensions.length - 1)]}`;
 
   function select(slug: string) {
     setSelectedSlug(slug);
