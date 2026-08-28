@@ -94,9 +94,40 @@ body {
   box-shadow: none;
 }
 
+/* Carousel navigation — square arrow buttons on framed image boxes. */
+.carousel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--color-ink);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-tech);
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 0 var(--color-ink);
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.carousel-btn:hover {
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+}
+
+.carousel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
 /* Form field — equipment-sheet style input. */
-.field-input {
-  width: 100%;
+.field-input {  width: 100%;
   border: 2px solid var(--color-ink);
   background-color: var(--color-paper);
   padding: 0.5rem 0.75rem;

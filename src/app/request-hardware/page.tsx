@@ -7,11 +7,11 @@ import { Hero } from "@/components/hero";
 import { SectionHeading } from "@/components/section-heading";
 
 export const metadata: Metadata = {
-  title: "Want Hardware?",
+  title: "Need Hardware?",
   description:
     "Request professional equipment for qualified hackathons and university programs across Asia.",
   openGraph: {
-    title: "Want Hardware? — ARTIFICER.ASIA",
+    title: "Need Hardware? — ARTIFICER.ASIA",
     description:
       "Request professional equipment for qualified hackathons and university programs across Asia.",
     url: "/request-hardware",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "/images/hardware-for-event/hero.png",
         width: 1672,
         height: 941,
-        alt: "ARTIFICER.ASIA — Want Hardware?",
+        alt: "ARTIFICER.ASIA — Need Hardware?",
       },
     ],
   },

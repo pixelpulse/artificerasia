@@ -26,8 +26,11 @@ images/
 │   │   └── 4_prototyping.png
 │   ├── 2_Hardware/                # section 02 — We bring the hardware (FIG. 07)
 │   │   └── what-we-do.png
-│   └── 3_Deployment/              # section 03 — The first deployment starts in Goa (FIG. 02)
-│       └── launch-expansion.png
+│   └── 3_Deployment/              # section 03 — Next Deployment in Goa (carousel)
+│       ├── 0_main-exterior.png
+│       ├── 1_mentor-cabins.png
+│       ├── 2_communal-lounge.png
+│       └── 3_walkway-to-beach.png
 ├── hardware-for-event/            # Want Hardware tab (/request-hardware)
 │   ├── hero.png                   # hero (FIG. 03)
 │   └── how-it-works.png           # section — How it works (FIG. 04)

@@ -16,6 +16,6 @@ export type NavItem = {
 
 export const nav: NavItem[] = [
   { href: "/", label: "Home", index: "01" },
-  { href: "/request-hardware", label: "Want Hardware?", index: "02" },
+  { href: "/request-hardware", label: "Need Hardware?", index: "02" },
   { href: "/sponsor-hardware", label: "Have Hardware?", index: "03" },
 ];

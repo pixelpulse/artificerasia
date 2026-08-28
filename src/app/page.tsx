@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { CatalogCard } from "@/components/catalog-card";
+import { CountdownClock } from "@/components/countdown-clock";
 import { CtaPanel } from "@/components/cta-panel";
 import { EquipmentBrowser } from "@/components/equipment-browser";
 import { FieldImage } from "@/components/field-image";
 import { Hero } from "@/components/hero";
+import { ImageCarousel } from "@/components/image-carousel";
 import { SectionHeading } from "@/components/section-heading";
 
 export const metadata: Metadata = {
@@ -32,7 +34,7 @@ export default function HomePage() {
     <>
       <Hero
         kicker="Initiative 001 — Open Access Hardware"
-        title="Free Access Hardware Library for Builders"
+        title="Open Access Hardware Library for Builders"
         sub="Free access to professional hardware for Asia's hackathons, universities, and builders."
         copy="The next important technology project could begin anywhere. ARTIFICER.ASIA brings robotics, AI, sensing, imaging, edge-computing, and prototyping equipment to the events and university programs where builders are ready to use it."
         primary={{ label: "Request Hardware Access", href: "/request-hardware" }}
@@ -107,12 +109,46 @@ export default function HomePage() {
           title="Next Deployment in Goa."
         />
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-          <FieldImage
-            id="home/3_Deployment/launch-expansion"
-            figure="Fig. 02"
-            subject="Builders at a Goa technology event"
-            alt="Builders using robotics, sensors, or other professional equipment at a Goa technology event"
-          />
+          <div>
+            <ImageCarousel
+              figure="Fig. 02"
+              slides={[
+                {
+                  id: "home/3_Deployment/0_main-exterior",
+                  subject: "Main Exterior",
+                  alt: "Main exterior of the Invisible Commons Goa venue",
+                },
+                {
+                  id: "home/3_Deployment/1_mentor-cabins",
+                  subject: "Mentor Cabins",
+                  alt: "Mentor cabins at the Invisible Commons Goa venue",
+                },
+                {
+                  id: "home/3_Deployment/2_communal-lounge",
+                  subject: "Communal Lounge",
+                  alt: "Communal lounge at the Invisible Commons Goa venue",
+                },
+                {
+                  id: "home/3_Deployment/3_walkway-to-beach",
+                  subject: "Walkway to Beach",
+                  alt: "Walkway to the beach at the Invisible Commons Goa venue",
+                },
+              ]}
+            />
+            <div className="mt-4 border-2 border-ink bg-cream px-4 py-3 shadow-[4px_4px_0_0_var(--color-ink)]">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <p className="font-tech text-[10px] uppercase tracking-[0.25em] text-ink-soft">
+                  T-minus · Deployment
+                </p>
+                <p className="font-tech text-[10px] uppercase tracking-[0.2em] text-ink-soft">
+                  17 Oct · 09:00 IST
+                </p>
+              </div>
+              <div className="mt-2">
+                <CountdownClock />
+              </div>
+            </div>
+          </div>
           <div>
             <p className="max-w-2xl text-base/7">
               In conjunction with{" "}
