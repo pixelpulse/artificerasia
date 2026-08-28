@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   ARTIFICER.ASIA — universal design tokens
+   Retro-futurist Asian hardware field-guide system.
+   Every page shares these tokens; no page-specific styling exists anywhere.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Palette — deep chocolate, warm cream, burnt coral, mustard, olive,
+     pale blue-gray, muted lavender (sparingly). */
+  --color-ink: #221812;
+  --color-ink-soft: #5a4a34;
+  --color-paper: #f3ecda;
+  --color-cream: #faf5e8;
+  --color-sand: #e5d9ba;
+  --color-coral: #d95a2b;
+  --color-coral-dark: #a9431d;
+  --color-mustard: #d9a83f;
+  --color-olive: #7d7f57;
+  --color-leaf: #2f9e44;
+  --color-fog: #a9bcc4;
+  --color-fog-deep: #4e7d92;
+  --color-lavender: #b3a6d2;
+
+  /* Typography — condensed display, sturdy body, technical mono labels. */
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-oswald), "Arial Narrow", ui-sans-serif, sans-serif;
+  --font-tech: var(--font-plexmono), ui-monospace, "SFMono-Regular", monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  /* Subtle paper grain across the whole site. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background-color: var(--color-coral);
+  color: var(--color-cream);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Universal components
+--------------------------------------------------------------------------- */
+
+/* Straight-edged button with hard offset shadow and press-down motion. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 2px solid var(--color-ink);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 0 var(--color-ink);
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+/* Form field — equipment-sheet style input. */
+.field-input {
+  width: 100%;
+  border: 2px solid var(--color-ink);
+  background-color: var(--color-paper);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+  transition: border-color 150ms ease;
+}
+
+.field-input::placeholder {
+  color: color-mix(in srgb, var(--color-ink-soft) 55%, transparent);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--color-coral);
+}
+
+/* Rubber-stamp label used for launch notices. */
+.stamp {
+  display: inline-block;
+  transform: rotate(-2deg);
+  border: 2px solid var(--color-coral);
+  box-shadow: inset 0 0 0 1px var(--color-coral);
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-tech);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-coral);
+}
+
+/* Screen-print halftone dots (uses currentColor). */
+.halftone {
+  background-image: radial-gradient(currentColor 1px, transparent 1.2px);
+  background-size: 5px 5px;
+}
+
+/* Header marquee. */
+.ticker-track {
+  animation: ticker 32s linear infinite;
+}
+
+/* Skip link for keyboard users. */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 100;
+  transform: translateY(-250%);
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ticker-track {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
