@@ -16,7 +16,7 @@ type ImageFrameProps = {
  */
 export function ImageFrame({ label, subject, children }: ImageFrameProps) {
   return (
-    <figure className="border-2 border-ink bg-cream shadow-[6px_6px_0_0_var(--color-ink)]">
+    <figure className="self-start border-2 border-ink bg-cream shadow-[6px_6px_0_0_var(--color-ink)]">
       <div className="relative aspect-[16/9] overflow-hidden border-b-2 border-ink">
         {children}
         {/* Corner registration marks */}

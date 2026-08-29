@@ -4,7 +4,7 @@ import { ImageFrame } from "@/components/image-frame";
 import { basePath } from "@/lib/base-path";
 
 type FieldImageProps = {
-  /** Hierarchical image path without extension, e.g. "home/0_Intro/hero" */
+  /** Hierarchical image path without extension, e.g. "01_home/0_Intro/0_hero" */
   id: string;
   figure: string;
   subject: string;
@@ -26,8 +26,8 @@ function resolveSrc(id: string): string | null {
 
 /**
  * Universal image frame. Resolves the image from the repository `images/`
- * folder (path relative to `images/`, e.g. `home/0_Intro/hero`) and falls back to a
- * visible linked placeholder (e.g. `[home/0_Intro/hero](#home/0_Intro/hero)`) when missing.
+ * folder (path relative to `images/`, e.g. `01_home/0_Intro/0_hero`) and falls back to a
+ * visible linked placeholder (e.g. `[01_home/0_Intro/0_hero](#01_home/0_Intro/0_hero)`) when missing.
  */
 export function FieldImage({ id, figure, subject, alt, priority = false }: FieldImageProps) {
   const resolved = resolveSrc(id);

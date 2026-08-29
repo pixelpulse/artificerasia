@@ -7,7 +7,7 @@ import { ImageFrame } from "@/components/image-frame";
 const extensions = ["webp", "png", "jpg"] as const;
 
 export type CarouselSlide = {
-  /** Hierarchical image id without extension, e.g. "home/3_Deployment/0_main-exterior" */
+  /** Hierarchical image id without extension, e.g. "01_home/3_Deployment/0_main-exterior" */
   id: string;
   /** Caption subtext shown under the image */
   subject: string;

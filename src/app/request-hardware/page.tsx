@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "/request-hardware",
     images: [
       {
-        url: "/images/hardware-for-event/hero.png",
+        url: "/images/02_need_hardware/0_hero.png",
         width: 1672,
         height: 941,
         alt: "ARTIFICER.ASIA — Need Hardware?",
@@ -160,7 +160,7 @@ export default function RequestHardwarePage() {
         primary={{ label: "Start an Application", href: "#application" }}
         visual={
           <FieldImage
-            id="hardware-for-event/hero"
+            id="02_need_hardware/0_hero"
             figure="Fig. 03"
             subject="Unpacking and testing equipment"
             alt="A diverse event team unpacking and testing robotics, AI, sensing, imaging, or prototyping hardware"
@@ -235,7 +235,7 @@ export default function RequestHardwarePage() {
             ))}
           </ol>
           <FieldImage
-            id="hardware-for-event/how-it-works"
+            id="02_need_hardware/1_how-it-works"
             figure="Fig. 04"
             subject="Delivery through event use and return"
             alt="A flat-lay or technical manifest showing equipment moving from delivery through event use and return"

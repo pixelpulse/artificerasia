@@ -43,11 +43,14 @@ Image slots resolve by hierarchical path relative to `images/`:
 <page>/<section>/<subsection>.<ext>
 ```
 
-Pages are `home/`, `hardware-for-event/`, and `sponsor-hardware/`; sections match the
-section headings; subsections cover button-driven sets (e.g. `home/1_Access/*`).
-Folder names carry an order prefix (`0_`, `1_`, …) matching page/section order.
+Pages are `01_home/`, `02_need_hardware/`, `03_have_hardware/`, and `04_ethos/`;
+sections match the
+section headings; subsections cover button-driven sets (e.g. `01_home/1_Access/*`).
+Folder names carry an order prefix (`0_`, `1_`, …) matching page/section order —
+and every image file carries its own `N_` prefix reflecting its order on the page
+or in its carousel.
 `.png`, `.jpg`, and `.webp` are supported. Missing files render a visible linked
-placeholder such as `[home/2_Hardware/what-we-do](#home/2_Hardware/what-we-do)`. See `images/README.md`
+placeholder such as `[01_home/2_Hardware/0_what-we-do](#01_home/2_Hardware/0_what-we-do)`. See `images/README.md`
 for the full layout.
 
 `public/images` is a symlink to the root `images/` folder.

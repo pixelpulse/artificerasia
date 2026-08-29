@@ -45,7 +45,7 @@ const equipment = [
 const extensions = ["webp", "png", "jpg"] as const;
 
 /** Image folder for Home section 01, relative to `images/`. */
-const base = "home/1_Access";
+const base = "01_home/1_Access";
 
 type EquipmentBrowserProps = {
   /** GitHub Pages base path prefix ("" locally / custom domain) */

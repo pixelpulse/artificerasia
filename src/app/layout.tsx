@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/images/home/0_Intro/hero.png",
+        url: "/images/01_home/0_Intro/0_hero.png",
         width: 1672,
         height: 941,
         alt: "ARTIFICER.ASIA — Open Access Hardware",

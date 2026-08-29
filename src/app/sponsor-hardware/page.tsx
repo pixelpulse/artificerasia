@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "/sponsor-hardware",
     images: [
       {
-        url: "/images/sponsor-hardware/hero.png",
+        url: "/images/03_have_hardware/0_hero.png",
         width: 1672,
         height: 941,
         alt: "ARTIFICER.ASIA — Have Hardware?",
@@ -30,22 +30,22 @@ const coordination = [
   {
     code: "Cat-01",
     title: "Program Matching",
-    copy: "Identify events and programs suited to the equipment.",
+    copy: "Identify events and programs suited to your organization's equipment and KPIs.",
   },
   {
     code: "Cat-02",
     title: "Deployment Preparation",
-    copy: "Coordinate receipt, inventory, setup, and participant access.",
+    copy: "We work directly with you to coordinate receipt, inventory, setup, and participant access before the event.",
   },
   {
     code: "Cat-03",
     title: "Onsite Stewardship",
-    copy: "Manage equipment use, basic support, and recovery during the event.",
+    copy: "When needed we send a team member onsite to manage equipment use, basic support, and recovery during the event.",
   },
   {
     code: "Cat-04",
     title: "Outcome Documentation",
-    copy: "Record where the equipment went, how it was used, and what was built.",
+    copy: "Our team ensures you receive usage records of where the equipment went, how it was used, and what was built.",
   },
 ];
 
@@ -58,7 +58,6 @@ const recordItems = [
   "Code repositories where available",
   "Technical feedback",
   "Photos and video where consent is provided",
-  "Equipment condition and recovery",
   "Potential future deployment opportunities",
 ];
 
@@ -131,9 +130,9 @@ export default function SponsorHardwarePage() {
         primary={{ label: "Offer Hardware", href: "#offer" }}
         visual={
           <FieldImage
-            id="sponsor-hardware/hero"
+            id="03_have_hardware/0_hero"
             figure="Fig. 05"
-            subject="Devices prepared, labeled, and packed"
+            subject="Showcase your tech"
             alt="Professional devices being prepared, labeled, and packed for a hackathon deployment"
             priority
           />
@@ -159,10 +158,12 @@ export default function SponsorHardwarePage() {
         <SectionHeading index="02" kicker="Custody model" title="Custody, not storage." />
         <div className="max-w-3xl border-2 border-ink bg-cream p-6 shadow-[4px_4px_0_0_var(--color-ink)] sm:p-8">
           <p className="text-base/7">
-            ARTIFICER.ASIA does not maintain long-term warehouses. Custody begins shortly before an
-            approved event and ends with documented return handoff. Hardware providers retain
-            ownership and responsibility for between-event storage, warranties, and substantive
-            repairs.
+            Unless specifically arranged, ARTIFICER.ASIA does not maintain long-term warehouses.
+          </p>
+          <p className="mt-4 text-base/7">
+            Custody begins shortly before an approved event and ends with documented return
+            handoff. Hardware providers retain ownership and responsibility for between-event
+            storage, warranties, and substantive repairs.
           </p>
         </div>
       </section>
@@ -179,9 +180,6 @@ export default function SponsorHardwarePage() {
               <p className="font-tech text-[11px] uppercase tracking-[0.2em]">
                 Sample activation record — Rec-AA-001
               </p>
-              <p className="font-tech text-[10px] uppercase tracking-[0.2em] text-mustard">
-                Illustrative
-              </p>
             </div>
             <ul className="border-2 border-t-0 border-ink bg-cream">
               {recordItems.map((item) => (
@@ -196,12 +194,9 @@ export default function SponsorHardwarePage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-xs/5 text-ink-soft">
-              Illustrative record format — no deployments are claimed.
-            </p>
           </div>
           <FieldImage
-            id="sponsor-hardware/what-gets-documented"
+            id="03_have_hardware/1_what-gets-documented"
             figure="Fig. 06"
             subject="Device deployment record"
             alt="A stylized device deployment record combining equipment photography, technical annotations, project evidence, and inventory details"
@@ -216,7 +211,7 @@ export default function SponsorHardwarePage() {
               “
             </span>
             Every device should produce more than a shipment receipt. It should produce knowledge,
-            evidence, and working technology.
+            evidence, and media.
             <span aria-hidden="true" className="text-mustard">
               ”
             </span>

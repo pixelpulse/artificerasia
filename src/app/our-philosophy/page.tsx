@@ -1,7 +1,5 @@
-import fs from "node:fs";
-import path from "node:path";
 import type { Metadata } from "next";
-import { basePath } from "@/lib/base-path";
+import { PageBackground } from "@/components/page-background";
 
 export const metadata: Metadata = {
   title: "Our Ethos",
@@ -14,7 +12,7 @@ export const metadata: Metadata = {
     url: "/our-philosophy",
     images: [
       {
-        url: "/images/philosophy/hero.png",
+        url: "/images/04_ethos/0_hero.png",
         width: 1672,
         height: 941,
         alt: "ARTIFICER.ASIA — Our Ethos",
@@ -23,35 +21,12 @@ export const metadata: Metadata = {
   },
 };
 
-const extensions = ["png", "jpg", "webp"] as const;
-
-function resolveBackground(): string | null {
-  for (const ext of extensions) {
-    const file = path.join(process.cwd(), "images", "philosophy", `hero.${ext}`);
-    if (fs.existsSync(file)) {
-      return `${basePath}/images/philosophy/hero.${ext}`;
-    }
-  }
-  return null;
-}
-
 export default function PhilosophyPage() {
-  const background = resolveBackground();
-
   return (
     <section className="relative min-h-screen">
-      {/* Page background photo */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center"
-        style={background ? { backgroundImage: `url(${background})` } : undefined}
-      />
-      {/* Page background photo */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center"
-        style={background ? { backgroundImage: `url(${background})` } : undefined}
-      />
+      {/* Full-page photo background — overlay disabled so the (mostly empty
+          canvas) image shows through cleanly. */}
+      <PageBackground id="04_ethos/0_hero" overlay={false} />
 
       <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-20 sm:px-6 lg:pt-16 lg:pb-28">
         <p className="text-center font-tech text-[11px] uppercase tracking-[0.3em] text-coral">

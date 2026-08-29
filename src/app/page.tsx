@@ -56,7 +56,7 @@ export default function HomePage() {
         }
         visual={
           <FieldImage
-            id="home/0_Intro/hero"
+            id="01_home/0_Intro/0_hero"
             figure="Fig. 01"
             subject="Hardware, builders, diagrams, and hackathon activity"
             alt="Editorial collage of professional hardware, builders, device diagrams, and hackathon activity"
@@ -81,7 +81,7 @@ export default function HomePage() {
           title="You bring the ideas. We bring the hardware."
         />
         <FieldImage
-          id="home/2_Hardware/what-we-do"
+          id="01_home/2_Hardware/0_what-we-do"
           figure="Fig. 07"
           subject="Builders working with professional equipment"
           alt="Builders working with professional equipment at an event or program"
@@ -116,22 +116,22 @@ export default function HomePage() {
               figure="Fig. 02"
               slides={[
                 {
-                  id: "home/3_Deployment/0_main-exterior",
+                  id: "01_home/3_Deployment/0_main-exterior",
                   subject: "Main Exterior",
                   alt: "Main exterior of the Invisible Commons Goa venue",
                 },
                 {
-                  id: "home/3_Deployment/1_mentor-cabins",
+                  id: "01_home/3_Deployment/1_mentor-cabins",
                   subject: "Mentor Cabins",
                   alt: "Mentor cabins at the Invisible Commons Goa venue",
                 },
                 {
-                  id: "home/3_Deployment/2_communal-lounge",
+                  id: "01_home/3_Deployment/2_communal-lounge",
                   subject: "Communal Lounge",
                   alt: "Communal lounge at the Invisible Commons Goa venue",
                 },
                 {
-                  id: "home/3_Deployment/3_walkway-to-beach",
+                  id: "01_home/3_Deployment/3_walkway-to-beach",
                   subject: "Walkway to Beach",
                   alt: "Walkway to the beach at the Invisible Commons Goa venue",
                 },
