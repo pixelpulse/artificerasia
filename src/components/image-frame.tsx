@@ -5,6 +5,11 @@ type ImageFrameProps = {
   label: string;
   /** Caption line 2 — subject description */
   subject: string;
+  /**
+   * Stack the caption on two left-aligned lines (label on top, subject
+   * underneath) instead of label left / subject right on one row.
+   */
+  stacked?: boolean;
   /** Media content (img or placeholder) */
   children: ReactNode;
 };
@@ -14,7 +19,7 @@ type ImageFrameProps = {
  * 2px ink border, hard offset shadow, 16:9 crop, corner registration marks,
  * and the two-line technical caption.
  */
-export function ImageFrame({ label, subject, children }: ImageFrameProps) {
+export function ImageFrame({ label, subject, stacked = false, children }: ImageFrameProps) {
   return (
     <figure className="self-start border-2 border-ink bg-cream shadow-[6px_6px_0_0_var(--color-ink)]">
       <div className="relative aspect-[16/9] overflow-hidden border-b-2 border-ink">
@@ -37,9 +42,15 @@ export function ImageFrame({ label, subject, children }: ImageFrameProps) {
           className="pointer-events-none absolute bottom-2 right-2 h-3 w-3 border-b-2 border-r-2 border-cream"
         />
       </div>
-      <figcaption className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-3 py-2 font-tech text-[10px] uppercase tracking-[0.18em]">
+      <figcaption
+        className={`px-3 py-2 font-tech text-[10px] uppercase tracking-[0.18em] ${
+          stacked
+            ? "flex flex-col items-start gap-0.5"
+            : "flex flex-wrap items-center justify-between gap-x-4 gap-y-1"
+        }`}
+      >
         <span className="text-coral">{label}</span>
-        <span className="text-right text-ink-soft">{subject}</span>
+        <span className={`${stacked ? "text-left" : "text-right"} text-ink-soft`}>{subject}</span>
       </figcaption>
     </figure>
   );

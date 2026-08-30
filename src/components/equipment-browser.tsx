@@ -130,7 +130,11 @@ export function EquipmentBrowser({ basePath = "" }: EquipmentBrowserProps) {
         </aside>
       </div>
 
-      <ImageFrame label={`Fig. 01A · ${base}/${selected.index}_${selected.slug}`} subject={selected.subject}>
+      <ImageFrame
+        stacked
+        label={`Fig. 01A · ${base}/${selected.index}_${selected.slug}`}
+        subject={selected.subject}
+      >
         {src ? (
           // eslint-disable-next-line @next/next/no-img-element -- repository assets, replaceable placeholders
           <img

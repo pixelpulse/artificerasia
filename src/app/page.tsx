@@ -38,7 +38,7 @@ export default function HomePage() {
       <div className="relative">
         <Hero
         kicker="Initiative 001 — Open Access Hardware"
-        title="Open Access Hardware Library for Builders"
+        title="Open Access Hackathon Hardware Library"
         sub="Free access to professional hardware for Asia's hackathons, universities, and builders."
         copy="The next important technology project could begin anywhere. ARTIFICER.ASIA brings robotics, AI, sensing, imaging, edge-computing, and prototyping equipment to the events and university programs where builders are ready to use it."
         primary={{ label: "Request Hardware Access", href: "/request-hardware" }}

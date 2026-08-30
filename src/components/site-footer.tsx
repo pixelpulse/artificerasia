@@ -3,7 +3,7 @@ import { nav, site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t-2 border-ink bg-ink text-cream">
+    <footer className="border-t-2 border-ink bg-ink text-cream">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <p className="font-display text-3xl font-bold uppercase leading-none tracking-tight">
