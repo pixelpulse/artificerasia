@@ -6,6 +6,7 @@ import { EquipmentBrowser } from "@/components/equipment-browser";
 import { FieldImage } from "@/components/field-image";
 import { Hero } from "@/components/hero";
 import { ImageCarousel } from "@/components/image-carousel";
+import { PageBackground } from "@/components/page-background";
 import { SectionHeading } from "@/components/section-heading";
 import { basePath } from "@/lib/base-path";
 
@@ -32,8 +33,10 @@ const roadmapSteps = [
 
 export default function HomePage() {
   return (
-    <>
-      <Hero
+    <div className="relative">
+      <PageBackground id="canvas_bg_stack" overlay={false} tileVertical />
+      <div className="relative">
+        <Hero
         kicker="Initiative 001 — Open Access Hardware"
         title="Open Access Hardware Library for Builders"
         sub="Free access to professional hardware for Asia's hackathons, universities, and builders."
@@ -236,6 +239,7 @@ export default function HomePage() {
           </CtaPanel>
         </div>
       </section>
-    </>
+      </div>
+    </div>
   );
 }

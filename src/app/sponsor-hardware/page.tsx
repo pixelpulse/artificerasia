@@ -4,6 +4,7 @@ import { FieldImage } from "@/components/field-image";
 import { FormSheet } from "@/components/form-sheet";
 import type { FormField } from "@/components/form-sheet";
 import { Hero } from "@/components/hero";
+import { PageBackground } from "@/components/page-background";
 import { SectionHeading } from "@/components/section-heading";
 
 export const metadata: Metadata = {
@@ -122,8 +123,10 @@ const sponsorFields: FormField[] = [
 
 export default function SponsorHardwarePage() {
   return (
-    <>
-      <Hero
+    <div className="relative">
+      <PageBackground id="canvas_bg_stack" overlay={false} tileVertical />
+      <div className="relative">
+        <Hero
         kicker="Equipment sponsorship — Deployment program"
         title="Put Your Hardware in Builders' Hands."
         copy="ARTIFICER.ASIA connects professional equipment with vetted hackathons and university programs where builders can use it, test ideas, and create working projects."
@@ -233,6 +236,7 @@ export default function SponsorHardwarePage() {
           note="* Required. Offers are reviewed for program suitability and deployment planning. This program concerns equipment availability, not financial sponsorship. This form is a placeholder — no submission channel is configured yet."
         />
       </section>
-    </>
+      </div>
+    </div>
   );
 }

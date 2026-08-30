@@ -4,6 +4,7 @@ import { FieldImage } from "@/components/field-image";
 import { FormSheet } from "@/components/form-sheet";
 import type { FormField } from "@/components/form-sheet";
 import { Hero } from "@/components/hero";
+import { PageBackground } from "@/components/page-background";
 import { SectionHeading } from "@/components/section-heading";
 
 export const metadata: Metadata = {
@@ -146,8 +147,10 @@ const requestFields: FormField[] = [
 
 export default function RequestHardwarePage() {
   return (
-    <>
-      <Hero
+    <div className="relative">
+      <PageBackground id="canvas_bg_stack" overlay={false} tileVertical />
+      <div className="relative">
+        <Hero
         kicker="Equipment access — Request program"
         title="Give Your Builders Better Tools."
         copy={
@@ -254,6 +257,7 @@ export default function RequestHardwarePage() {
           note="* Required. Requests are reviewed for event suitability, technical readiness, and equipment availability. This form is a placeholder — no submission channel is configured yet."
         />
       </section>
-    </>
+      </div>
+    </div>
   );
 }

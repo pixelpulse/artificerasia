@@ -25,6 +25,13 @@ original changes.
 ```
 images/
 ├── 01_home/                       # Home tab (/)
+│   ├── backgrounds/               # full-page vertical background stack
+│   │   ├── bg_0.png / bg_0.webp
+│   │   ├── bg_1.png / bg_1.webp
+│   │   ├── bg_2.png / bg_2.webp
+│   │   ├── bg_3.png / bg_3.webp
+│   │   ├── bg_4.png / bg_4.webp
+│   │   └── bg_stack.png / bg_stack.webp  # bg_0…bg_4 appended vertically
 │   ├── 0_Intro/                   # hero
 │   │   └── 0_hero.png             # hero collage (FIG. 01)
 │   ├── 1_Access/                  # section 01 — Talent is everywhere (button-driven)
@@ -42,9 +49,11 @@ images/
 │       ├── 3_walkway-to-beach.png
 │       └── 4_launch-expansion.png # (unused — carousel replaced it)
 ├── 02_need_hardware/              # Need Hardware tab (/request-hardware)
+│   ├── backgrounds/               # full-page background stack (images TBD)
 │   ├── 0_hero.png                 # hero (FIG. 03)
 │   └── 1_how-it-works.png         # section — How it works (FIG. 04)
 ├── 03_have_hardware/              # Have Hardware tab (/sponsor-hardware)
+│   ├── backgrounds/               # full-page background stack (images TBD)
 │   ├── 0_hero.png                 # hero (FIG. 05)
 │   └── 1_what-gets-documented.png # section — What gets documented (FIG. 06)
 └── 04_ethos/                      # Our Ethos tab (/our-philosophy)
