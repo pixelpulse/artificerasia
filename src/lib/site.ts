@@ -3,6 +3,7 @@ export const site = {
   slogan: "Open Access Hardware.",
   support:
     "Free access to professional hardware for Asia's hackathons, universities, and builders.",
+  email: "contact@artificer.asia",
   ref: "AA·2026",
 } as const;
 

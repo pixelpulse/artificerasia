@@ -35,10 +35,29 @@ export function SiteFooter() {
           <h2 className="font-tech text-[11px] uppercase tracking-[0.25em] text-mustard">
             Contact
           </h2>
-          <p className="mt-4 text-sm/6 text-cream/70">Contact channel to be confirmed.</p>
-          <span className="mt-2 block border-b border-dashed border-cream/50 pb-0.5 font-tech text-xs uppercase tracking-widest">
-            placeholder
-          </span>
+          <p className="mt-4 text-sm/6 text-cream/70">
+            For program inquiries and equipment requests, please see{" "}
+            <Link
+              href="/request-hardware"
+              className="underline decoration-2 underline-offset-4 hover:text-mustard"
+            >
+              Need Hardware?
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/sponsor-hardware"
+              className="underline decoration-2 underline-offset-4 hover:text-mustard"
+            >
+              Have Hardware?
+            </Link>
+            . For other inquiries, write to us at
+          </p>
+          <a
+            href={`mailto:${site.email}`}
+            className="mt-2 inline-block border-b border-dashed border-cream/50 pb-0.5 font-tech text-xs uppercase tracking-widest text-cream underline decoration-2 underline-offset-4 hover:text-mustard"
+          >
+            {site.email}
+          </a>
         </div>
 
         <div>

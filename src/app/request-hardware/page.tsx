@@ -6,6 +6,7 @@ import type { FormField } from "@/components/form-sheet";
 import { Hero } from "@/components/hero";
 import { PageBackground } from "@/components/page-background";
 import { SectionHeading } from "@/components/section-heading";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Need Hardware?",
@@ -254,7 +255,15 @@ export default function RequestHardwarePage() {
           sheetTitle="Equipment Request Sheet"
           fields={requestFields}
           buttonLabel="Submit Equipment Request"
-          note="* Required. Requests are reviewed for event suitability, technical readiness, and equipment availability. This form is a placeholder — no submission channel is configured yet."
+          subject={{
+            orgField: "organization",
+            verb: "Need Hardware",
+            segments: [
+              { field: "participants", prefix: " for ", suffix: " builders" },
+              { field: "eventDates", prefix: " on " },
+            ],
+          }}
+          note={`* Required. Requests are reviewed for event suitability, technical readiness, and equipment availability. Submissions are emailed directly to ${site.email}.`}
         />
       </section>
       </div>

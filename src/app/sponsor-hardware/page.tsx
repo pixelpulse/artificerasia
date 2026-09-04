@@ -6,6 +6,7 @@ import type { FormField } from "@/components/form-sheet";
 import { Hero } from "@/components/hero";
 import { PageBackground } from "@/components/page-background";
 import { SectionHeading } from "@/components/section-heading";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Have Hardware?",
@@ -233,7 +234,12 @@ export default function SponsorHardwarePage() {
           sheetTitle="Equipment Manifest"
           fields={sponsorFields}
           buttonLabel="Submit Equipment Offer"
-          note="* Required. Offers are reviewed for program suitability and deployment planning. This program concerns equipment availability, not financial sponsorship. This form is a placeholder — no submission channel is configured yet."
+          subject={{
+            orgField: "organization",
+            verb: "Have Hardware",
+            segments: [{ field: "model", prefix: " — " }],
+          }}
+          note={`* Required. Offers are reviewed for program suitability and deployment planning. This program concerns equipment availability, not financial sponsorship. Submissions are emailed directly to ${site.email}.`}
         />
       </section>
       </div>

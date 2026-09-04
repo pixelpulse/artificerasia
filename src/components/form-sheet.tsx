@@ -2,6 +2,14 @@
 
 import { useState } from "react";
 import type { FormEvent } from "react";
+import { site } from "@/lib/site";
+
+/**
+ * FormSubmit AJAX endpoint — submissions are emailed to the address below.
+ * The first-ever submission triggers a one-time confirmation email to that
+ * address; click the link once to activate delivery.
+ */
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${site.email}`;
 
 export type FormField = {
   name: string;
@@ -14,6 +22,15 @@ export type FormField = {
   full?: boolean;
 };
 
+type SubjectConfig = {
+  /** Field whose trimmed value is bracketed at the start, e.g. "organization". */
+  orgField: string;
+  /** Verb phrase after the bracket, e.g. "Need Hardware". */
+  verb: string;
+  /** Conditional segments appended only when the field has a value. */
+  segments?: Array<{ field: string; prefix: string; suffix?: string }>;
+};
+
 type FormSheetProps = {
   anchorId: string;
   sheetCode: string;
@@ -21,11 +38,28 @@ type FormSheetProps = {
   fields: FormField[];
   buttonLabel: string;
   note: string;
+  /** Serializable spec for the email subject line, built from submitted values. */
+  subject: SubjectConfig;
 };
+
+function buildSubject(config: SubjectConfig, values: Record<string, string>): string {
+  const org = values[config.orgField]?.trim() || "Untitled organization";
+  let result = `[${org}] ${config.verb}`;
+  for (const segment of config.segments ?? []) {
+    const value = values[segment.field]?.trim();
+    if (value) {
+      result += `${segment.prefix}${value}${segment.suffix ?? ""}`;
+    }
+  }
+  return result;
+}
+
+type SubmitStatus = "idle" | "sending" | "sent" | "error";
 
 /**
  * Universal form component styled as an equipment sheet / manifest.
- * Not connected to a backend — submission shows a clearly labeled placeholder.
+ * Runs on a fully static site, so submissions are emailed via FormSubmit's
+ * AJAX endpoint — no backend required.
  */
 export function FormSheet({
   anchorId,
@@ -34,12 +68,48 @@ export function FormSheet({
   fields,
   buttonLabel,
   note,
+  subject,
 }: FormSheetProps) {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    // Honeypot: silently drop bot submissions that fill the hidden field.
+    if (String(formData.get("_honey") ?? "").length > 0) {
+      return;
+    }
+
+    const values: Record<string, string> = {};
+    for (const [key, value] of formData.entries()) {
+      if (key.startsWith("_")) continue;
+      values[key] = String(value);
+    }
+
+    const payload: Record<string, string> = {
+      _subject: buildSubject(subject, values),
+      _template: "table",
+      _captcha: "false",
+      _replyTo: values.email ?? "",
+      ...values,
+    };
+
+    setStatus("sending");
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        throw new Error(`FormSubmit responded ${response.status}`);
+      }
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -70,23 +140,50 @@ export function FormSheet({
         onSubmit={handleSubmit}
         noValidate={false}
       >
+        <input
+          type="text"
+          name="_honey"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="hidden"
+        />
         {fields.map((field) => (
           <FieldControl key={field.name} field={field} />
         ))}
         <div className="sm:col-span-2">
-          <button type="submit" className="btn bg-coral text-cream hover:bg-coral-dark">
-            <span>{buttonLabel}</span>
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="btn bg-coral text-cream hover:bg-coral-dark disabled:cursor-wait disabled:opacity-60"
+          >
+            <span>{status === "sending" ? "Sending…" : buttonLabel}</span>
             <span aria-hidden="true" className="text-sm leading-none">
               →
             </span>
           </button>
-          {submitted ? (
+          {status === "sent" ? (
             <p
               role="status"
               className="mt-5 border-2 border-dashed border-coral bg-paper p-4 font-tech text-[11px] uppercase leading-relaxed tracking-wider"
             >
-              Submission placeholder — this form is not connected to a backend. Nothing was sent or
-              stored.
+              Submission sent. Your request has been emailed to the ARTIFICER.ASIA team — we will
+              follow up at the address you provided.
+            </p>
+          ) : null}
+          {status === "error" ? (
+            <p
+              role="alert"
+              className="mt-5 border-2 border-dashed border-coral bg-paper p-4 font-tech text-[11px] uppercase leading-relaxed tracking-wider"
+            >
+              Your submission could not be sent automatically. Please email it directly to{" "}
+              <a
+                href={`mailto:${site.email}`}
+                className="underline underline-offset-4 hover:text-coral"
+              >
+                {site.email}
+              </a>
+              .
             </p>
           ) : null}
         </div>
