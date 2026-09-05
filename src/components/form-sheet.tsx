@@ -93,6 +93,11 @@ export function FormSheet({
       _template: "table",
       _captcha: "false",
       _replyTo: values.email ?? "",
+      // Pin the form identity explicitly — FormSubmit tracks forms by URL, and
+      // browsers' stricter referrer policies can otherwise drop it (see
+      // formsubmit.co/help). Field changes never require re-activation, but a
+      // changed page URL or recipient email does.
+      _url: `${window.location.origin}${window.location.pathname}`,
       ...values,
     };
 
@@ -167,7 +172,7 @@ export function FormSheet({
               role="status"
               className="mt-5 border-2 border-dashed border-coral bg-paper p-4 font-tech text-[11px] uppercase leading-relaxed tracking-wider"
             >
-              Submission sent. Your request has been emailed to the ARTIFICER.ASIA team — we will
+              Submission sent. Your inquiry has been emailed to the ARTIFICER.ASIA team — we will
               follow up at the address you provided.
             </p>
           ) : null}

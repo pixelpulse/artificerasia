@@ -63,43 +63,15 @@ const recordItems = [
   "Potential future deployment opportunities",
 ];
 
-const categoryOptions = [
-  "Robotics and autonomous systems",
-  "AI and edge-computing devices",
-  "Sensors and IoT equipment",
-  "Cameras and imaging systems",
-  "Drones and aerial technology",
-  "Smart glasses and spatial-computing devices",
-  "Microcontrollers and prototyping systems",
-  "Other specialized technical equipment",
-];
-
 const sponsorFields: FormField[] = [
   { name: "name", label: "Name", required: true },
   { name: "email", label: "Email", type: "email", required: true },
   { name: "organization", label: "Company or organization", required: true },
   { name: "country", label: "Country", required: true },
   {
-    name: "category",
-    label: "Equipment category",
-    type: "select",
-    required: true,
-    options: categoryOptions,
-  },
-  { name: "model", label: "Manufacturer and model", required: true },
-  { name: "quantity", label: "Number of devices", type: "number" },
-  {
-    name: "requirements",
-    label: "Technical requirements",
-    type: "textarea",
-    required: true,
-    hint: "Power, network, software, or environmental needs",
-  },
-  {
-    name: "skillLevel",
-    label: "Recommended participant skill level",
-    type: "select",
-    options: ["Beginner", "Mixed", "Intermediate", "Advanced"],
+    name: "restrictions",
+    label: "Geographic restrictions",
+    hint: "Regions or venues the equipment cannot travel to",
   },
   {
     name: "docs",
@@ -107,18 +79,6 @@ const sponsorFields: FormField[] = [
     type: "select",
     options: ["Yes", "Partial", "No"],
   },
-  {
-    name: "warranty",
-    label: "Warranty and repair process",
-    type: "textarea",
-    hint: "How repairs and claims are handled during a deployment",
-  },
-  {
-    name: "restrictions",
-    label: "Geographic restrictions",
-    hint: "Regions or venues the equipment cannot travel to",
-  },
-  { name: "availability", label: "Availability window", placeholder: "e.g. Q1 2027 onward (or TBD)" },
   { name: "message", label: "Message", type: "textarea", full: true },
 ];
 
@@ -131,7 +91,7 @@ export default function SponsorHardwarePage() {
         kicker="Equipment sponsorship — Deployment program"
         title="Put Your Hardware in Builders' Hands."
         copy="ARTIFICER.ASIA connects professional equipment with vetted hackathons and university programs where builders can use it, test ideas, and create working projects."
-        primary={{ label: "Offer Hardware", href: "#offer" }}
+        primary={{ label: "Partner With Us", href: "#partner" }}
         visual={
           <FieldImage
             id="03_have_hardware/0_hero"
@@ -227,19 +187,23 @@ export default function SponsorHardwarePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
-        <SectionHeading index="04" kicker="Offer hardware" title="Equipment manifest." />
+        <SectionHeading
+          index="04"
+          kicker="Sponsor / partner hardware"
+          title="Start a conversation."
+        />
         <FormSheet
-          anchorId="offer"
+          anchorId="partner"
           sheetCode="Form AR-02"
-          sheetTitle="Equipment Manifest"
+          sheetTitle="Sponsor / Partner Hardware"
           fields={sponsorFields}
-          buttonLabel="Submit Equipment Offer"
+          buttonLabel="Send Inquiry"
           subject={{
             orgField: "organization",
-            verb: "Have Hardware",
-            segments: [{ field: "model", prefix: " — " }],
+            verb: "Sponsor / Partner Hardware",
+            segments: [{ field: "country", prefix: " from " }],
           }}
-          note={`* Required. Offers are reviewed for program suitability and deployment planning. This program concerns equipment availability, not financial sponsorship. Submissions are emailed directly to ${site.email}.`}
+          note={`* Required. Partnerships begin with a conversation — tell us about your hardware and we'll follow up by email. Inquiries are emailed directly to ${site.email}.`}
         />
       </section>
       </div>
