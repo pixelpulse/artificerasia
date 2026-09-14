@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 const roadmapSteps = [
-  "Invisible Commons pilot",
+  "CoCo City pilot",
   "Additional Asian hackathons",
   "University programs",
   "Regional hardware-access network",
@@ -47,12 +47,12 @@ export default function HomePage() {
           <>
             Join us alongside{" "}
             <a
-              href="https://invisiblecommons.org/"
+              href="https://city.commoncompute.org/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline decoration-2 underline-offset-4"
             >
-              Invisible Commons
+              CoCo City
             </a>{" "}
             · Goa
           </>
@@ -121,22 +121,22 @@ export default function HomePage() {
                 {
                   id: "01_home/3_Deployment/0_main-exterior",
                   subject: "Main Exterior",
-                  alt: "Main exterior of the Invisible Commons Goa venue",
+                  alt: "Main exterior of the CoCo City Goa venue",
                 },
                 {
                   id: "01_home/3_Deployment/1_mentor-cabins",
                   subject: "Mentor Cabins",
-                  alt: "Mentor cabins at the Invisible Commons Goa venue",
+                  alt: "Mentor cabins at the CoCo City Goa venue",
                 },
                 {
                   id: "01_home/3_Deployment/2_communal-lounge",
                   subject: "Communal Lounge",
-                  alt: "Communal lounge at the Invisible Commons Goa venue",
+                  alt: "Communal lounge at the CoCo City Goa venue",
                 },
                 {
                   id: "01_home/3_Deployment/3_walkway-to-beach",
                   subject: "Walkway to Beach",
-                  alt: "Walkway to the beach at the Invisible Commons Goa venue",
+                  alt: "Walkway to the beach at the CoCo City Goa venue",
                 },
               ]}
             />
@@ -177,12 +177,12 @@ export default function HomePage() {
               , <strong className="font-semibold text-coral">ARTIFICER.ASIA</strong> will support
               the{" "}
               <a
-                href="https://invisiblecommons.org/"
+                href="https://city.commoncompute.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-ink underline decoration-2 underline-offset-4"
               >
-                Invisible Commons
+                CoCo City
               </a>{" "}
               <strong className="font-semibold text-ink">hackathon in Goa</strong>
               , providing participating builders access to professional hardware for hands-on
