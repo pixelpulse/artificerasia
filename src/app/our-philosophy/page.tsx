@@ -19,6 +19,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://artificer.asia/our-philosophy",
+  },
 };
 
 export default function PhilosophyPage() {

@@ -26,7 +26,9 @@ export function Hero({ kicker, title, sub, copy, primary, secondary, visual, sta
               {sub}
             </p>
           ) : null}
-          {copy ? <div className="mt-5 max-w-xl text-base/7 text-ink-soft">{copy}</div> : null}
+          {copy ? (
+            <div className="mt-5 max-w-xl space-y-4 text-base/7 text-ink-soft">{copy}</div>
+          ) : null}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <ButtonLink href={primary.href} variant="primary">
               {primary.label}

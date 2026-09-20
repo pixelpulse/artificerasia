@@ -20,6 +20,9 @@ export const metadata: Metadata = {
       "Free access to professional hardware for Asia's hackathons, universities, and builders.",
     url: "/",
   },
+  alternates: {
+    canonical: "https://artificer.asia/",
+  },
 };
 
 const roadmapSteps = [
@@ -67,6 +70,27 @@ export default function HomePage() {
           />
         }
       />
+
+      <section aria-label="What ARTIFICER.ASIA does" className="border-b-2 border-ink bg-cream">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-12">
+          <p className="font-tech text-[11px] uppercase tracking-[0.3em] text-coral">
+            00 / The deal, in plain terms
+          </p>
+          <div className="mt-4 max-w-4xl space-y-4 text-base/7 text-ink-soft sm:text-lg/8">
+            <p>
+              ARTIFICER.ASIA is a hardware access and deployment network connecting hardware
+              companies with qualified hackathons, universities, and builder communities across
+              Asia.
+            </p>
+            <p>
+              We help hackathon organizers access professional robotics, IoT, AI, edge-computing,
+              sensing, imaging, drone, and prototyping hardware at no cost, while helping hardware
+              manufacturers, DevRel teams, and technology companies place their devices in the
+              hands of qualified developers and students.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
         <SectionHeading

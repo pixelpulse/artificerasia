@@ -3,6 +3,7 @@ import { Archivo, IBM_Plex_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { site } from "@/lib/site";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -62,6 +63,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main" className="skip-link">
           Skip to content
         </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: site.name,
+              url: "https://artificer.asia",
+              email: site.email,
+              description: site.support,
+            }),
+          }}
+        />
         <SiteHeader />
         <main id="main" tabIndex={-1} className="flex-1">
           {children}

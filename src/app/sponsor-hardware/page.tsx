@@ -26,6 +26,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://artificer.asia/sponsor-hardware",
+  },
 };
 
 const coordination = [
@@ -90,7 +93,23 @@ export default function SponsorHardwarePage() {
         <Hero
         kicker="Equipment sponsorship — Deployment program"
         title="Put Your Hardware in Builders' Hands."
-        copy="ARTIFICER.ASIA connects professional equipment with vetted hackathons and university programs where builders can use it, test ideas, and create working projects."
+        copy={
+          <>
+            <p>
+              We work with hardware manufacturers, semiconductor companies, robotics companies,
+              IoT companies, developer-hardware companies, DevRel teams, ecosystem teams,
+              developer marketing teams, and technology partners that want qualified builders to
+              use their hardware. ARTIFICER.ASIA identifies suitable hackathons and university
+              programs, coordinates deployment, supports device use, and documents what
+              developers build.
+            </p>
+            <p>
+              ARTIFICER.ASIA connects professional equipment with vetted hackathons and
+              university programs where builders can use it, test ideas, and create working
+              projects.
+            </p>
+          </>
+        }
         primary={{ label: "Partner With Us", href: "#partner" }}
         visual={
           <FieldImage

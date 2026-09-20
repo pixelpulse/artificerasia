@@ -26,6 +26,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://artificer.asia/request-hardware",
+  },
 };
 
 const categories = [
@@ -156,9 +159,16 @@ export default function RequestHardwarePage() {
         title="Give Your Builders Better Tools."
         copy={
           <>
-            ARTIFICER.ASIA helps provide qualified hackathons and university programs{" "}
-            <em>free</em> access to professional equipment that participants may not otherwise be
-            able to use.
+            <p>
+              ARTIFICER.ASIA provides <em>hardware access and hardware sponsorship</em> for
+              qualified hackathons, universities, student technology programs, and builder
+              communities across Asia.
+            </p>
+            <p>
+              Organizers can request robotics, IoT, sensors, AI and edge-computing devices,
+              cameras, drones, development boards, microcontrollers, and other professional
+              hardware for hands-on use by participants.
+            </p>
           </>
         }
         primary={{ label: "Start an Application", href: "#application" }}
