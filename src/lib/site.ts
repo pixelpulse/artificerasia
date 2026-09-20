@@ -7,7 +7,12 @@ export const site = {
   ref: "AA·2026",
 } as const;
 
-export type NavHref = "/" | "/request-hardware" | "/sponsor-hardware" | "/our-philosophy";
+export type NavHref =
+  | "/"
+  | "/request-hardware"
+  | "/sponsor-hardware"
+  | "/our-philosophy"
+  | "/#faq";
 
 export type NavItem = {
   href: NavHref;
@@ -20,4 +25,5 @@ export const nav: NavItem[] = [
   { href: "/request-hardware", label: "Need Hardware?", index: "02" },
   { href: "/sponsor-hardware", label: "Have Hardware?", index: "03" },
   { href: "/our-philosophy", label: "Our Ethos", index: "04" },
+  { href: "/#faq", label: "FAQ", index: "05" },
 ];

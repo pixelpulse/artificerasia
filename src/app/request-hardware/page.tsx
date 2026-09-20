@@ -200,10 +200,10 @@ export default function RequestHardwarePage() {
         copy={
           <>
             <p>
-              ARTIFICER.ASIA provides <em>hardware access and hardware sponsorship</em> for
-              qualified hackathons, universities, student technology programs, and builder
-              communities across Asia. Approved programs can receive access to professional
-              equipment at no cost, subject to program review and equipment availability.
+              ARTIFICER.ASIA provides hardware access and hardware sponsorship for qualified
+              hackathons, universities, student technology programs, and builder communities
+              across Asia. Approved programs can receive access to professional equipment at no
+              cost, subject to program review and equipment availability.
             </p>
             <p>
               Organizers can request robotics, IoT, sensors, AI and edge-computing devices,

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { MouseEvent } from "react";
 import { nav } from "@/lib/site";
 
 const ticker =
@@ -11,6 +12,22 @@ const ticker =
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  // When landing on the home page with #faq in the URL (e.g. clicked from
+  // another page), scroll the FAQ section into view after route transition.
+  useEffect(() => {
+    if (window.location.hash === "#faq") {
+      document.getElementById("faq")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [pathname]);
+
+  /** FAQ link: on the home page, smooth-scroll; elsewhere Link navigates to /#faq. */
+  function handleFaqClick(event: MouseEvent<HTMLAnchorElement>) {
+    if (pathname === "/") {
+      event.preventDefault();
+      document.getElementById("faq")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-ink bg-paper">
@@ -37,11 +54,13 @@ export function SiteHeader() {
           <ul className="flex items-stretch gap-1">
             {nav.map((item) => {
               const active = pathname === item.href;
+              const isFaq = item.href === "/#faq";
               return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
+                    onClick={isFaq ? handleFaqClick : undefined}
                     className={`flex items-center gap-2 border-2 px-3 py-2 font-tech text-[11px] uppercase tracking-[0.12em] transition-colors duration-150 ${
                       active
                         ? "border-ink bg-ink text-cream"
@@ -78,6 +97,7 @@ export function SiteHeader() {
           <ul>
             {nav.map((item) => {
               const active = pathname === item.href;
+              const isFaq = item.href === "/#faq";
               return (
                 <li key={item.href} className="border-b border-ink last:border-b-0">
                   <Link
@@ -86,7 +106,10 @@ export function SiteHeader() {
                     className={`flex items-center gap-3 px-4 py-4 font-tech text-sm uppercase tracking-[0.15em] ${
                       active ? "bg-ink text-cream" : "text-ink"
                     }`}
-                    onClick={() => setOpen(false)}
+                    onClick={(event) => {
+                      setOpen(false);
+                      if (isFaq) handleFaqClick(event);
+                    }}
                   >
                     <span className={active ? "text-mustard" : "text-coral"}>{item.index}</span>
                     {item.label}

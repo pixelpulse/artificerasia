@@ -121,17 +121,17 @@ export default function SponsorHardwarePage() {
         copy={
           <>
             <p>
+              ARTIFICER.ASIA connects professional equipment with vetted hackathons and
+              university programs where builders can use it, test ideas, and create working
+              projects.
+            </p>
+            <p>
               We work with hardware manufacturers, semiconductor companies, robotics companies,
               IoT companies, developer-hardware companies, DevRel teams, ecosystem teams,
               developer marketing teams, and technology partners that want qualified builders to
               use their hardware. ARTIFICER.ASIA identifies suitable hackathons and university
               programs, coordinates deployment, supports device use, and documents what
               developers build.
-            </p>
-            <p>
-              ARTIFICER.ASIA connects professional equipment with vetted hackathons and
-              university programs where builders can use it, test ideas, and create working
-              projects.
             </p>
           </>
         }
