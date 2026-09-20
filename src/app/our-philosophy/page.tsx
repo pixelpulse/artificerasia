@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { PageBackground } from "@/components/page-background";
 
 export const metadata: Metadata = {
-  title: "Our Ethos",
+  title: {
+    absolute: "Our Ethos | ARTIFICER.ASIA",
+  },
   description:
     "The age of the artificer is coming. Why ARTIFICER.ASIA believes the tools of the future should reach more builders.",
   openGraph: {
-    title: "Our Ethos — ARTIFICER.ASIA",
+    title: "Our Ethos | ARTIFICER.ASIA",
     description:
       "The age of the artificer is coming. Why ARTIFICER.ASIA believes the tools of the future should reach more builders.",
     url: "/our-philosophy",

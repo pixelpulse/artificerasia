@@ -4,18 +4,21 @@ import { FieldImage } from "@/components/field-image";
 import { FormSheet } from "@/components/form-sheet";
 import type { FormField } from "@/components/form-sheet";
 import { Hero } from "@/components/hero";
+import { JsonLd } from "@/components/json-ld";
 import { PageBackground } from "@/components/page-background";
 import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Have Hardware?",
+  title: {
+    absolute: "Place Your Hardware With Hackathons & Developers in Asia | ARTIFICER.ASIA",
+  },
   description:
-    "Place professional equipment with vetted hackathons and university programs across Asia.",
+    "Place your hardware with qualified hackathons, university programs, developers, and students across Asia through coordinated deployment and documented outcomes.",
   openGraph: {
-    title: "Have Hardware? — ARTIFICER.ASIA",
+    title: "Place Your Hardware With Hackathons & Developers in Asia | ARTIFICER.ASIA",
     description:
-      "Place professional equipment with vetted hackathons and university programs across Asia.",
+      "Place your hardware with qualified hackathons, university programs, developers, and students across Asia through coordinated deployment and documented outcomes.",
     url: "/sponsor-hardware",
     images: [
       {
@@ -88,6 +91,28 @@ const sponsorFields: FormField[] = [
 export default function SponsorHardwarePage() {
   return (
     <div className="relative">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Service",
+              "@id": "https://artificer.asia/sponsor-hardware#service",
+              url: "https://artificer.asia/sponsor-hardware",
+              name: "Hardware Deployment for Developer Programs",
+              serviceType:
+                "Hardware deployment, program matching, developer engagement, onsite stewardship, equipment recovery, and outcome documentation",
+              provider: { "@id": "https://artificer.asia/#organization" },
+              areaServed: "Asia",
+              audience: {
+                "@type": "Audience",
+                audienceType:
+                  "Hardware manufacturers, semiconductor companies, robotics companies, IoT companies, developer-hardware companies, DevRel teams, ecosystem teams, partnerships teams, and developer-marketing teams",
+              },
+            },
+          ],
+        }}
+      />
       <PageBackground id="canvas_bg_stack" overlay={false} tileVertical />
       <div className="relative">
         <Hero

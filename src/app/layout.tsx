@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono, Oswald } from "next/font/google";
 import "./globals.css";
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
@@ -63,17 +64,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: site.name,
-              url: "https://artificer.asia",
-              email: site.email,
-              description: site.support,
-            }),
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://artificer.asia/#organization",
+            name: site.name,
+            url: "https://artificer.asia",
+            email: site.email,
+            description: site.support,
           }}
         />
         <SiteHeader />

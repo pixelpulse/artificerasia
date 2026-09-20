@@ -4,18 +4,21 @@ import { FieldImage } from "@/components/field-image";
 import { FormSheet } from "@/components/form-sheet";
 import type { FormField } from "@/components/form-sheet";
 import { Hero } from "@/components/hero";
+import { JsonLd } from "@/components/json-ld";
 import { PageBackground } from "@/components/page-background";
 import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Need Hardware?",
+  title: {
+    absolute: "Free Hardware for Hackathons & University Programs in Asia | ARTIFICER.ASIA",
+  },
   description:
-    "Request professional equipment for qualified hackathons and university programs across Asia.",
+    "Request free professional hardware for qualified hackathons, universities, student technology programs, and builder communities across Asia.",
   openGraph: {
-    title: "Need Hardware? — ARTIFICER.ASIA",
+    title: "Free Hardware for Hackathons & University Programs in Asia | ARTIFICER.ASIA",
     description:
-      "Request professional equipment for qualified hackathons and university programs across Asia.",
+      "Request free professional hardware for qualified hackathons, universities, student technology programs, and builder communities across Asia.",
     url: "/request-hardware",
     images: [
       {
@@ -152,6 +155,43 @@ const requestFields: FormField[] = [
 export default function RequestHardwarePage() {
   return (
     <div className="relative">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Service",
+              "@id": "https://artificer.asia/request-hardware#service",
+              url: "https://artificer.asia/request-hardware",
+              name: "Hackathon Hardware Access",
+              serviceType:
+                "Free hardware access and hardware sponsorship for qualified hackathons and university programs",
+              provider: { "@id": "https://artificer.asia/#organization" },
+              areaServed: "Asia",
+              audience: {
+                "@type": "Audience",
+                audienceType:
+                  "Hackathon organizers, universities, student technology programs, research and maker communities, nonprofit technical programs, and structured builder events",
+              },
+            },
+            {
+              // Categories of equipment ARTIFICER.ASIA can coordinate — not
+              // products for sale or rent, so ItemList rather than OfferCatalog.
+              "@type": "ItemList",
+              "@id": "https://artificer.asia/request-hardware#equipment-categories",
+              name: "Equipment categories ARTIFICER.ASIA can coordinate",
+              description:
+                "Categories of professional equipment ARTIFICER.ASIA can coordinate for selected programs. Specific availability is confirmed per program.",
+              itemListElement: categories.map((category, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: category.title,
+                description: category.copy,
+              })),
+            },
+          ],
+        }}
+      />
       <PageBackground id="canvas_bg_stack" overlay={false} tileVertical />
       <div className="relative">
         <Hero
@@ -162,7 +202,8 @@ export default function RequestHardwarePage() {
             <p>
               ARTIFICER.ASIA provides <em>hardware access and hardware sponsorship</em> for
               qualified hackathons, universities, student technology programs, and builder
-              communities across Asia.
+              communities across Asia. Approved programs can receive access to professional
+              equipment at no cost, subject to program review and equipment availability.
             </p>
             <p>
               Organizers can request robotics, IoT, sensors, AI and edge-computing devices,

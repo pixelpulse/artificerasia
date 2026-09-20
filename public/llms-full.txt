@@ -1,0 +1,99 @@
+# ARTIFICER.ASIA — Full Description
+
+> Hardware access and deployment network connecting hardware providers with qualified hackathons, universities, and builder communities across Asia.
+
+Canonical site: https://artificer.asia · Ref: AA·2026 · Field Manual Ed. 01
+
+## What ARTIFICER.ASIA is
+
+ARTIFICER.ASIA is a hardware access and deployment network connecting hardware companies with qualified hackathons, universities, and builder communities across Asia. We help hackathon organizers access professional robotics, IoT, AI, edge-computing, sensing, imaging, drone, and prototyping hardware at no cost, while helping hardware manufacturers, DevRel teams, and technology companies place their devices in the hands of qualified developers and students.
+
+## The two sides
+
+- Side A — Organizers: qualified hackathons, universities, student technology programs, and builder communities can request professional hardware at no cost, subject to program review and equipment availability.
+- Side B — Providers: hardware manufacturers and technology companies can use ARTIFICER.ASIA to identify appropriate hackathons, university programs, and builder communities, deploy equipment, support its use, recover it, and document what builders created.
+
+## Who can request hardware
+
+- Hackathons
+- Universities
+- Student technology programs
+- Research or maker communities
+- Nonprofit technical programs
+- Other structured builder events in Asia
+
+## Who can provide hardware
+
+Hardware manufacturers, semiconductor companies, robotics companies, IoT companies, developer-hardware companies, DevRel teams, ecosystem teams, partnerships teams, developer-marketing teams, and technology partners that want qualified builders to use their hardware.
+
+## Hardware categories
+
+Categories describe the kinds of professional equipment ARTIFICER.ASIA can coordinate for selected programs. Availability of any specific device is confirmed during review — no device listed here is guaranteed for a given event.
+
+- Robotics and autonomous systems — robots, actuators, and autonomous platforms for movement and control projects.
+- AI and edge-computing devices — accelerators and edge systems for on-device AI and inference work.
+- Sensors and IoT equipment — environmental, motion, and connectivity sensors for networked builds.
+- Cameras and imaging systems — visible, depth, and machine-vision imaging for computer vision projects.
+- Drones and aerial technology — aerial platforms for mapping, sensing, and flight-focused builds.
+- Smart glasses and spatial-computing devices — wearable and spatial interfaces for augmented and mixed-reality experiments.
+- Microcontrollers and prototyping systems — boards, kits, and bench tools for rapid electronics prototyping.
+- Other specialized technical equipment — category requests reviewed case by case against event needs.
+
+## Program review criteria
+
+Selection considers technical readiness, event organization, participant capability, equipment suitability, and the likelihood of meaningful use. Requests are reviewed for event suitability, technical readiness, and equipment availability. Programs and equipment are subject to review and availability.
+
+## Organizer workflow — request to return, in six steps
+
+1. The organizer submits an equipment request.
+2. ARTIFICER.ASIA reviews the event and technical requirements.
+3. Suitable equipment is identified and matched with the program.
+4. Hardware is delivered, prepared, and supported onsite.
+5. Equipment use and resulting projects are documented.
+6. Devices are reconciled, packed, and returned.
+
+## Provider deployment model — from offer to documented return
+
+- Program Matching — identify events and programs suited to the provider's equipment and KPIs.
+- Deployment Preparation — coordinate receipt, inventory, setup, and participant access before the event.
+- Onsite Stewardship — when needed, a team member is sent onsite to manage equipment use, basic support, and recovery during the event.
+- Outcome Documentation — providers receive usage records of where the equipment went, how it was used, and what was built.
+
+## Custody model
+
+Unless specifically arranged, ARTIFICER.ASIA does not maintain long-term warehouses. Custody begins shortly before an approved event and ends with documented return handoff. Hardware providers retain ownership and responsibility for between-event storage, warranties, and substantive repairs.
+
+## Outcome documentation
+
+Deployment records may include: equipment model and serial number; event, country, and venue; participating teams and builders; equipment utilization; prototypes and demonstrations; code repositories where available; technical feedback; photos and video where consent is provided; and potential future deployment opportunities.
+
+## Geographic focus
+
+ARTIFICER.ASIA focuses on hackathons, universities, and builder communities across Asia, subject to program feasibility and equipment availability.
+
+## Current pilot — CoCo City Goa
+
+Initiative 001. Next deployment: the CoCo City hackathon in Goa, 17 October 2026, 09:00 IST, in conjunction with Invisible Garden and Common Compute. The pilot will establish a repeatable system for selecting equipment, coordinating delivery, preparing devices, supporting builders, documenting projects, and recovering and returning equipment.
+
+Roadmap: CoCo City pilot → additional Asian hackathons → university programs → regional hardware-access network.
+
+Equipment is also intended to support future hackathons and university programs, including prospective initiatives connected with Chiang Mai University and IIT Bombay. These institutions are not confirmed partners.
+
+## Important limitations
+
+- Access is provided to approved programs at no cost, subject to program review and equipment availability.
+- Specific equipment availability is confirmed per program.
+- ARTIFICER.ASIA does not operate as a public hardware rental storefront. No rentals, no storefront.
+- Hardware providers retain ownership of equipment.
+
+## Canonical pages
+
+- Home: https://artificer.asia/
+- Request Hardware: https://artificer.asia/request-hardware
+- Sponsor Hardware: https://artificer.asia/sponsor-hardware
+- Our Ethos: https://artificer.asia/our-philosophy
+
+## Contact
+
+- Email: contact@artificer.asia
+- Program inquiries: see the Request Hardware and Sponsor Hardware pages linked above.

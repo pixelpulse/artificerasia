@@ -1,0 +1,34 @@
+# ARTIFICER.ASIA
+
+> Hardware access and deployment network connecting hardware providers with qualified hackathons, universities, and builder communities across Asia.
+
+## For hackathons and universities
+
+- [Request Hardware](https://artificer.asia/request-hardware): Request access to professional robotics, IoT, AI, edge-computing, sensing, imaging, drone, spatial-computing, microcontroller, and prototyping hardware for qualified programs. Access is provided at no cost to approved programs, subject to review and equipment availability.
+
+## For hardware companies
+
+- [Sponsor Hardware](https://artificer.asia/sponsor-hardware): Place hardware with vetted hackathons, university programs, developers, students, and builder communities across Asia. ARTIFICER.ASIA coordinates program matching, deployment preparation, participant access, onsite stewardship where needed, equipment recovery, and outcome documentation.
+
+## Organization
+
+- [ARTIFICER.ASIA](https://artificer.asia/)
+- Geographic focus: Asia
+- Organizer audiences: hackathons, universities, student technology programs, research and maker communities, nonprofit technical programs, builder communities
+- Provider audiences: hardware manufacturers, semiconductor companies, robotics companies, IoT companies, developer-hardware companies, DevRel teams, ecosystem teams, partnerships teams, developer-marketing teams
+- Contact: [contact@artificer.asia](mailto:contact@artificer.asia)
+
+## Hardware categories
+
+- Robotics and autonomous systems
+- AI and edge-computing devices
+- Sensors and IoT equipment
+- Cameras and imaging systems
+- Drones and aerial technology
+- Smart glasses and spatial-computing devices
+- Microcontrollers and prototyping systems
+- Other specialized technical equipment
+
+## Important limitations
+
+Specific equipment availability is confirmed per program. ARTIFICER.ASIA is not a public rental storefront.

@@ -6,18 +6,21 @@ import { EquipmentBrowser } from "@/components/equipment-browser";
 import { FieldImage } from "@/components/field-image";
 import { Hero } from "@/components/hero";
 import { ImageCarousel } from "@/components/image-carousel";
+import { JsonLd } from "@/components/json-ld";
 import { PageBackground } from "@/components/page-background";
 import { SectionHeading } from "@/components/section-heading";
 import { basePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
-  title: "Open Access Hardware",
+  title: {
+    absolute: "Hackathon Hardware & Hardware Sponsorship in Asia | ARTIFICER.ASIA",
+  },
   description:
-    "Free access to professional hardware for Asia's hackathons, universities, and builders.",
+    "ARTIFICER.ASIA connects hardware companies with vetted hackathons, universities, and builder communities across Asia, providing qualified programs access to professional hardware.",
   openGraph: {
-    title: "ARTIFICER.ASIA — Open Access Hardware",
+    title: "Hackathon Hardware & Hardware Sponsorship in Asia | ARTIFICER.ASIA",
     description:
-      "Free access to professional hardware for Asia's hackathons, universities, and builders.",
+      "ARTIFICER.ASIA connects hardware companies with vetted hackathons, universities, and builder communities across Asia, providing qualified programs access to professional hardware.",
     url: "/",
   },
   alternates: {
@@ -32,11 +35,57 @@ const roadmapSteps = [
   "Regional hardware-access network",
 ];
 
+// Single source of truth for both the visible FAQ and the FAQPage JSON-LD,
+// so structured data always matches the rendered page.
+const faq = [
+  {
+    question: "Does ARTIFICER.ASIA provide free hardware for hackathons?",
+    answer:
+      "Qualified hackathons, university programs, and builder communities in Asia can request access to professional hardware at no cost, subject to program review and equipment availability.",
+  },
+  {
+    question: "What kinds of hardware can hackathons request?",
+    answer:
+      "Programs may request robotics, AI and edge-computing equipment, sensors and IoT devices, cameras and machine-vision systems, drones, smart glasses and spatial-computing devices, microcontrollers, development boards, prototyping systems, and other specialized technical equipment.",
+  },
+  {
+    question: "Can hardware companies use ARTIFICER.ASIA to find hackathons?",
+    answer:
+      "Yes. ARTIFICER.ASIA helps hardware manufacturers and technology companies identify qualified hackathons, university programs, and builder communities where developers and students can use their equipment.",
+  },
+  {
+    question: "Does ARTIFICER.ASIA work with DevRel teams?",
+    answer:
+      "Yes. ARTIFICER.ASIA can work with developer relations, ecosystem, partnerships, engineering, and developer-marketing teams seeking meaningful hands-on use of their hardware by qualified builders.",
+  },
+  {
+    question: "Where does ARTIFICER.ASIA operate?",
+    answer:
+      "ARTIFICER.ASIA focuses on hackathons, universities, and builder communities across Asia, subject to program feasibility and equipment availability.",
+  },
+  {
+    question: "Is ARTIFICER.ASIA a hardware rental company?",
+    answer:
+      "No. ARTIFICER.ASIA coordinates hardware access and sponsored deployments for qualified programs. The site does not operate as a public hardware rental storefront.",
+  },
+];
+
 
 
 export default function HomePage() {
   return (
     <div className="relative">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }}
+      />
       <PageBackground id="canvas_bg_stack" overlay={false} tileVertical />
       <div className="relative">
         <Hero
@@ -262,6 +311,29 @@ export default function HomePage() {
             Help place it at qualified events and programs.
           </CtaPanel>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
+        <SectionHeading index="05" kicker="Field questions" title="Asked and answered." />
+        <dl className="border-2 border-ink bg-cream shadow-[6px_6px_0_0_var(--color-ink)]">
+          {faq.map((item, index) => (
+            <div
+              key={item.question}
+              className="border-b border-ink/20 px-5 py-5 last:border-b-0 sm:px-6"
+            >
+              <dt className="font-display text-base font-semibold uppercase leading-tight tracking-tight sm:text-lg">
+                <span
+                  aria-hidden="true"
+                  className="mr-2 font-tech text-[10px] uppercase tracking-[0.25em] text-coral"
+                >
+                  Q{String(index + 1).padStart(2, "0")} ·
+                </span>
+                {item.question}
+              </dt>
+              <dd className="mt-3 max-w-3xl text-sm/6 text-ink-soft sm:pl-12">{item.answer}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
       </div>
     </div>
