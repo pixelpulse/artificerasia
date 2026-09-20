@@ -90,9 +90,9 @@ const workflowSteps = [
   "The organizer submits an equipment request.",
   "ARTIFICER.ASIA reviews the event and technical requirements.",
   "Suitable equipment is identified and matched with the program.",
-  "Hardware is delivered, prepared, and supported onsite.",
+  "Hardware is delivered and prepared, with onsite support provided where needed.",
   "Equipment use and resulting projects are documented.",
-  "Devices are reconciled, packed, and returned.",
+  "Devices are reconciled, packed, and returned to the hardware provider.",
 ];
 
 const requestFields: FormField[] = [

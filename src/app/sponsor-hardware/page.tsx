@@ -11,14 +11,14 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Place Your Hardware With Hackathons & Developers in Asia | ARTIFICER.ASIA",
+    absolute: "Hardware Deployment for Hackathons & Developers in Asia | ARTIFICER.ASIA",
   },
   description:
-    "Place your hardware with qualified hackathons, university programs, developers, and students across Asia through coordinated deployment and documented outcomes.",
+    "Deploy manufacturer-owned hardware through qualified hackathons and university programs across Asia with coordinated setup, support, recovery, return, and documented outcomes.",
   openGraph: {
-    title: "Place Your Hardware With Hackathons & Developers in Asia | ARTIFICER.ASIA",
+    title: "Hardware Deployment for Hackathons & Developers in Asia | ARTIFICER.ASIA",
     description:
-      "Place your hardware with qualified hackathons, university programs, developers, and students across Asia through coordinated deployment and documented outcomes.",
+      "Deploy manufacturer-owned hardware through qualified hackathons and university programs across Asia with coordinated setup, support, recovery, return, and documented outcomes.",
     url: "/sponsor-hardware",
     images: [
       {
@@ -38,22 +38,22 @@ const coordination = [
   {
     code: "Cat-01",
     title: "Program Matching",
-    copy: "Identify events and programs suited to your organization's equipment and KPIs.",
+    copy: "We identify programs suited to your hardware, target builders, technical requirements, geography, and developer goals.",
   },
   {
     code: "Cat-02",
     title: "Deployment Preparation",
-    copy: "We work directly with you to coordinate receipt, inventory, setup, and participant access before the event.",
+    copy: "We coordinate receipt, inventory, technical preparation, setup, and participant access before each approved deployment.",
   },
   {
     code: "Cat-03",
     title: "Onsite Stewardship",
-    copy: "When needed we send a team member onsite to manage equipment use, basic support, and recovery during the event.",
+    copy: "When needed, we provide onsite stewardship for participant access, basic technical enablement, troubleshooting, and equipment recovery.",
   },
   {
     code: "Cat-04",
     title: "Outcome Documentation",
-    copy: "Our team ensures you receive usage records of where the equipment went, how it was used, and what was built.",
+    copy: "You receive a deployment record showing where the equipment went, who used it, how it was used, what was built, technical feedback, available media, and potential future deployment opportunities.",
   },
 ];
 
@@ -73,6 +73,14 @@ const sponsorFields: FormField[] = [
   { name: "name", label: "Name", required: true },
   { name: "email", label: "Email", type: "email", required: true },
   { name: "organization", label: "Company or organization", required: true },
+  {
+    name: "hardwareProduct",
+    label: "Hardware or product you want builders using",
+    type: "textarea",
+    required: true,
+    full: true,
+    placeholder: "Product, device, kit, platform, or hardware family",
+  },
   { name: "country", label: "Country", required: true },
   {
     name: "restrictions",
@@ -84,6 +92,14 @@ const sponsorFields: FormField[] = [
     label: "Support documentation available",
     type: "select",
     options: ["Yes", "Partial", "No"],
+  },
+  {
+    name: "deploymentGoal",
+    label: "What would a successful deployment look like?",
+    type: "textarea",
+    full: true,
+    placeholder:
+      "Examples: developer adoption, prototypes, feedback, workshop use, documentation, media, or repeat deployment",
   },
   { name: "message", label: "Message", type: "textarea", full: true },
 ];
@@ -99,9 +115,9 @@ export default function SponsorHardwarePage() {
               "@type": "Service",
               "@id": "https://artificer.asia/sponsor-hardware#service",
               url: "https://artificer.asia/sponsor-hardware",
-              name: "Hardware Deployment for Developer Programs",
+              name: "Managed Hardware Deployment for Developer Programs",
               serviceType:
-                "Hardware deployment, program matching, developer engagement, onsite stewardship, equipment recovery, and outcome documentation",
+                "Managed deployment of manufacturer-owned hardware with qualified hackathons and university programs across Asia — program matching, temporary custody, technical enablement where needed, recovery, reconciliation, documented return, outcome documentation, and repeat-deployment potential",
               provider: { "@id": "https://artificer.asia/#organization" },
               areaServed: "Asia",
               audience: {
@@ -116,26 +132,28 @@ export default function SponsorHardwarePage() {
       <PageBackground id="canvas_bg_stack" overlay={false} tileVertical />
       <div className="relative">
         <Hero
-        kicker="Equipment sponsorship — Deployment program"
+        kicker="Manufacturer hardware — Managed deployment"
         title="Put Your Hardware in Builders' Hands."
         copy={
           <>
             <p>
-              ARTIFICER.ASIA connects professional equipment with vetted hackathons and
-              university programs where builders can use it, test ideas, and create working
-              projects.
+              ARTIFICER.ASIA turns manufacturer-owned hardware into managed developer deployments
+              across Asia. You retain ownership while we match your equipment with qualified
+              hackathons and university programs, coordinate receipt, preparation and participant
+              access, support its use where needed, recover and reconcile it afterward, and
+              complete a documented return handoff.
             </p>
             <p>
-              We work with hardware manufacturers, semiconductor companies, robotics companies,
-              IoT companies, developer-hardware companies, DevRel teams, ecosystem teams,
-              developer marketing teams, and technology partners that want qualified builders to
-              use their hardware. ARTIFICER.ASIA identifies suitable hackathons and university
-              programs, coordinates deployment, supports device use, and documents what
-              developers build.
+              The goal is not a one-off hardware sponsorship. It is a repeatable way to put proven
+              hardware into successive builder environments without rebuilding the operational
+              layer for every program.
+            </p>
+            <p className="mt-2 inline-block border-2 border-ink bg-cream px-4 py-3 font-display text-lg font-semibold uppercase leading-snug tracking-tight text-ink shadow-[4px_4px_0_0_var(--color-coral)]">
+              You keep the hardware. We handle the operational middle.
             </p>
           </>
         }
-        primary={{ label: "Partner With Us", href: "#partner" }}
+        primary={{ label: "Explore a Deployment", href: "#partner" }}
         visual={
           <FieldImage
             id="03_have_hardware/0_hero"
@@ -163,15 +181,16 @@ export default function SponsorHardwarePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
-        <SectionHeading index="02" kicker="Custody model" title="Custody, not storage." />
+        <SectionHeading index="02" kicker="Custody model" title="Your hardware stays yours." />
         <div className="max-w-3xl border-2 border-ink bg-cream p-6 shadow-[4px_4px_0_0_var(--color-ink)] sm:p-8">
           <p className="text-base/7">
-            Unless specifically arranged, ARTIFICER.ASIA does not maintain long-term warehouses.
+            Hardware providers retain ownership throughout the deployment. ARTIFICER.ASIA takes
+            temporary custody shortly before an approved program, manages deployment and recovery,
+            and ends custody with a documented return handoff.
           </p>
           <p className="mt-4 text-base/7">
-            Custody begins shortly before an approved event and ends with documented return
-            handoff. Hardware providers retain ownership and responsibility for between-event
-            storage, warranties, and substantive repairs.
+            Unless separately arranged, between-event storage, warranties, and substantive repairs
+            remain with the hardware provider.
           </p>
         </div>
       </section>
@@ -179,11 +198,34 @@ export default function SponsorHardwarePage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
         <SectionHeading
           index="03"
+          kicker="Repeat deployment"
+          title="Built for repeat deployment."
+        />
+        <div className="max-w-3xl border-2 border-ink bg-cream p-6 shadow-[4px_4px_0_0_var(--color-ink)] sm:p-8">
+          <p className="text-base/7">
+            A successful activation should make the next one easier. ARTIFICER.ASIA documents
+            equipment setup, support requirements, builder use cases, technical feedback, and
+            outcomes so proven hardware and program formats can be carried into future
+            deployments across Asia.
+          </p>
+          <p className="mt-4 text-base/7">
+            Hardware returns to the provider between programs unless another custody arrangement
+            is agreed.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
+        <SectionHeading
+          index="04"
           kicker="What gets documented"
           title="Every deployment leaves a record."
         />
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
+            <p className="mb-4 font-display text-lg font-semibold uppercase leading-snug tracking-tight">
+              Developer engagement should produce evidence, not just impressions.
+            </p>
             <div className="flex flex-wrap items-center justify-between gap-3 border-2 border-ink bg-ink px-4 py-3 text-cream">
               <p className="font-tech text-[11px] uppercase tracking-[0.2em]">
                 Sample activation record — Rec-AA-001
@@ -232,22 +274,22 @@ export default function SponsorHardwarePage() {
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-20">
         <SectionHeading
-          index="04"
-          kicker="Sponsor / partner hardware"
+          index="05"
+          kicker="Explore a deployment"
           title="Start a conversation."
         />
         <FormSheet
           anchorId="partner"
           sheetCode="Form AR-02"
-          sheetTitle="Sponsor / Partner Hardware"
+          sheetTitle="Hardware Deployment Inquiry"
           fields={sponsorFields}
-          buttonLabel="Send Inquiry"
+          buttonLabel="Explore a Deployment"
           subject={{
             orgField: "organization",
-            verb: "Sponsor / Partner Hardware",
+            verb: "Hardware Deployment Inquiry",
             segments: [{ field: "country", prefix: " from " }],
           }}
-          note={`* Required. Partnerships begin with a conversation — tell us about your hardware and we'll follow up by email. Inquiries are emailed directly to ${site.email}.`}
+          note={`* Required. Deployment conversations begin with your hardware, target builders, and program goals. Inquiries are emailed directly to ${site.email}.`}
         />
       </section>
       </div>

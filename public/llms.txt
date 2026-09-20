@@ -8,7 +8,7 @@
 
 ## For hardware companies
 
-- [Sponsor Hardware](https://artificer.asia/sponsor-hardware): Place hardware with vetted hackathons, university programs, developers, students, and builder communities across Asia. ARTIFICER.ASIA coordinates program matching, deployment preparation, participant access, onsite stewardship where needed, equipment recovery, and outcome documentation.
+- [Deploy Hardware](https://artificer.asia/sponsor-hardware): Deploy manufacturer-owned hardware through qualified hackathons and university programs across Asia. ARTIFICER.ASIA coordinates program matching, temporary custody, technical enablement where needed, recovery, reconciliation, documented return, outcome documentation, and repeat-deployment potential.
 
 ## Organization
 
@@ -31,4 +31,4 @@
 
 ## Important limitations
 
-Specific equipment availability is confirmed per program. ARTIFICER.ASIA is not a public rental storefront.
+Specific equipment availability is confirmed per program. ARTIFICER.ASIA is not a public rental storefront. Hardware can remain manufacturer-owned and, when deployed on a temporary basis, is returned after the approved deployment.

@@ -6,12 +6,12 @@ Canonical site: https://artificer.asia · Ref: AA·2026 · Field Manual Ed. 01
 
 ## What ARTIFICER.ASIA is
 
-ARTIFICER.ASIA is a hardware access and deployment network connecting hardware companies with qualified hackathons, universities, and builder communities across Asia. We help hackathon organizers access professional robotics, IoT, AI, edge-computing, sensing, imaging, drone, and prototyping hardware at no cost, while helping hardware manufacturers, DevRel teams, and technology companies place their devices in the hands of qualified developers and students.
+ARTIFICER.ASIA is a hardware access and deployment network connecting hardware companies with qualified hackathons, universities, and builder communities across Asia. We give qualified programs access to professional hardware at no cost, while giving manufacturers a repeatable way to put their equipment into builders' hands, support its use, recover it, and document what was created.
 
 ## The two sides
 
 - Side A — Organizers: qualified hackathons, universities, student technology programs, and builder communities can request professional hardware at no cost, subject to program review and equipment availability.
-- Side B — Providers: hardware manufacturers and technology companies can use ARTIFICER.ASIA to identify appropriate hackathons, university programs, and builder communities, deploy equipment, support its use, recover it, and document what builders created.
+- Side B — Providers: hardware manufacturers and technology companies retain ownership of their equipment. ARTIFICER.ASIA takes temporary custody for approved deployments, matches hardware with qualified hackathons and university programs, coordinates setup and participant access, provides technical enablement where needed, recovers and reconciles equipment afterward, completes a documented return handoff, and documents what builders created.
 
 ## Who can request hardware
 
@@ -48,20 +48,24 @@ Selection considers technical readiness, event organization, participant capabil
 1. The organizer submits an equipment request.
 2. ARTIFICER.ASIA reviews the event and technical requirements.
 3. Suitable equipment is identified and matched with the program.
-4. Hardware is delivered, prepared, and supported onsite.
+4. Hardware is delivered and prepared, with onsite support provided where needed.
 5. Equipment use and resulting projects are documented.
-6. Devices are reconciled, packed, and returned.
+6. Devices are reconciled, packed, and returned to the hardware provider.
 
 ## Provider deployment model — from offer to documented return
 
-- Program Matching — identify events and programs suited to the provider's equipment and KPIs.
-- Deployment Preparation — coordinate receipt, inventory, setup, and participant access before the event.
-- Onsite Stewardship — when needed, a team member is sent onsite to manage equipment use, basic support, and recovery during the event.
-- Outcome Documentation — providers receive usage records of where the equipment went, how it was used, and what was built.
+- Program Matching — identify programs suited to the provider's hardware, target builders, technical requirements, geography, and developer goals.
+- Deployment Preparation — coordinate receipt, inventory, technical preparation, setup, and participant access before each approved deployment.
+- Onsite Stewardship — when needed, provide onsite stewardship for participant access, basic technical enablement, troubleshooting, and equipment recovery.
+- Outcome Documentation — providers receive a deployment record showing where the equipment went, who used it, how it was used, what was built, technical feedback, available media, and potential future deployment opportunities.
 
 ## Custody model
 
-Unless specifically arranged, ARTIFICER.ASIA does not maintain long-term warehouses. Custody begins shortly before an approved event and ends with documented return handoff. Hardware providers retain ownership and responsibility for between-event storage, warranties, and substantive repairs.
+Hardware providers retain ownership throughout the deployment. ARTIFICER.ASIA takes temporary custody shortly before an approved program, manages deployment and recovery, and ends custody with a documented return handoff. Unless separately arranged, between-event storage, warranties, and substantive repairs remain with the hardware provider.
+
+## Repeat deployment
+
+A successful activation should make the next one easier. ARTIFICER.ASIA documents equipment setup, support requirements, builder use cases, technical feedback, and outcomes so proven hardware and program formats can be carried into future deployments across Asia. Hardware returns to the provider between programs unless another custody arrangement is agreed.
 
 ## Outcome documentation
 
@@ -84,16 +88,16 @@ Equipment is also intended to support future hackathons and university programs,
 - Access is provided to approved programs at no cost, subject to program review and equipment availability.
 - Specific equipment availability is confirmed per program.
 - ARTIFICER.ASIA does not operate as a public hardware rental storefront. No rentals, no storefront.
-- Hardware providers retain ownership of equipment.
+- For temporary deployments, hardware providers retain ownership and equipment is returned after the approved deployment unless another custody or ownership arrangement has been agreed.
 
 ## Canonical pages
 
 - Home: https://artificer.asia/
 - Request Hardware: https://artificer.asia/request-hardware
-- Sponsor Hardware: https://artificer.asia/sponsor-hardware
+- Deploy Hardware: https://artificer.asia/sponsor-hardware
 - Our Ethos: https://artificer.asia/our-philosophy
 
 ## Contact
 
 - Email: contact@artificer.asia
-- Program inquiries: see the Request Hardware and Sponsor Hardware pages linked above.
+- Program inquiries: see the Request Hardware and Deploy Hardware pages linked above.

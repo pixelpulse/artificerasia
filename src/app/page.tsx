@@ -51,12 +51,12 @@ const faq = [
   {
     question: "Can hardware companies use ARTIFICER.ASIA to find hackathons?",
     answer:
-      "Yes. ARTIFICER.ASIA helps hardware manufacturers and technology companies identify qualified hackathons, university programs, and builder communities where developers and students can use their equipment.",
+      "Yes. ARTIFICER.ASIA identifies qualified hackathons and university programs and can coordinate equipment receipt, deployment, onsite support, recovery, return, and outcome documentation.",
   },
   {
-    question: "Does ARTIFICER.ASIA work with DevRel teams?",
+    question: "Do hardware providers have to donate their equipment?",
     answer:
-      "Yes. ARTIFICER.ASIA can work with developer relations, ecosystem, partnerships, engineering, and developer-marketing teams seeking meaningful hands-on use of their hardware by qualified builders.",
+      "No. Hardware can remain manufacturer-owned. ARTIFICER.ASIA can take temporary custody for an approved deployment, manage its use and recovery, and complete a documented return handoff afterward.",
   },
   {
     question: "Where does ARTIFICER.ASIA operate?",
@@ -66,7 +66,7 @@ const faq = [
   {
     question: "Is ARTIFICER.ASIA a hardware rental company?",
     answer:
-      "No. ARTIFICER.ASIA coordinates hardware access and sponsored deployments for qualified programs. The site does not operate as a public hardware rental storefront.",
+      "No. ARTIFICER.ASIA coordinates temporary hardware access and managed deployments for qualified programs. Hardware can remain manufacturer-owned and be returned after an approved deployment.",
   },
 ];
 
@@ -90,7 +90,7 @@ export default function HomePage() {
       <div className="relative">
         <Hero
         kicker="Initiative 001 — Open Access Hardware"
-        title="Open Access Hackathon Hardware Library"
+        title="Hardware to Hackathon"
         sub="Free access to professional hardware for Asia's hackathons, universities, and builders."
         copy={
           <>
@@ -100,15 +100,14 @@ export default function HomePage() {
               Asia.
             </p>
             <p>
-              We help hackathon organizers access professional robotics, IoT, AI, edge-computing,
-              sensing, imaging, drone, and prototyping hardware at no cost, while helping hardware
-              manufacturers, DevRel teams, and technology companies place their devices in the
-              hands of qualified developers and students.
+              We give qualified programs access to professional hardware at no cost, while giving
+              manufacturers a repeatable way to put their equipment into builders&apos; hands, support
+              its use, recover it, and document what was created.
             </p>
           </>
         }
         primary={{ label: "Request Hardware Access", href: "/request-hardware" }}
-        secondary={{ label: "Sponsor Hardware", href: "/sponsor-hardware" }}
+        secondary={{ label: "Deploy Hardware", href: "/sponsor-hardware" }}
         stamp={
           <>
             Join us alongside{" "}
@@ -164,10 +163,11 @@ export default function HomePage() {
             potential impact.
           </CatalogCard>
           <CatalogCard code="Cat-03" title="Onsite Support">
-            Setup, participant access, basic troubleshooting, and equipment recovery.
+            Setup, participant access, basic technical enablement, troubleshooting, and equipment
+            recovery where needed.
           </CatalogCard>
           <CatalogCard code="Cat-04" title="Documented Outcomes">
-            Clear records of how equipment was used and what builders created.
+            Clear records of where equipment went, how builders used it, and what they created.
           </CatalogCard>
         </div>
       </section>
@@ -297,11 +297,12 @@ export default function HomePage() {
           <CtaPanel
             tone="fog"
             code="Path B — Hardware providers"
-            title="Have hardware builders should use?"
+            title="Want more builders using your hardware?"
             href="/sponsor-hardware"
-            button="Sponsor Hardware"
+            button="Deploy Hardware"
           >
-            Help place it at qualified events and programs.
+            Deploy it through qualified hackathons and university programs without managing every
+            activation yourself.
           </CtaPanel>
         </div>
       </section>
